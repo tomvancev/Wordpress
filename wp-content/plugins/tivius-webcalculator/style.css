@@ -1,0 +1,31 @@
+/* Css Styles for Web Calculator */
+
+input.web-calc-input, select.web-calc-select, button.web-calc-button{
+	margin: 20px 20px;
+}
+a.list-group-item {
+    height:auto;
+    min-height:220px;
+}
+a.list-group-item.active small {
+    color:#fff;
+}
+.calc-list-item {
+	border:1px solid rgba(0,0,0,.125);
+	margin: 0 0 20px  0;
+	padding:20px;
+}
+
+a.calc-list-item:hover , a.calc-list-item:active, a.calc-list-item:visited {
+	color:black;
+	text-decoration: none;
+}
+a.calc-list-item:hover {
+	background: rgba(0,0,0,.025);
+}
+
+.has-error.form-control {
+	    border: 1px solid #a94442;
+    box-shadow: 1px 1px #a94442;
+}
+
