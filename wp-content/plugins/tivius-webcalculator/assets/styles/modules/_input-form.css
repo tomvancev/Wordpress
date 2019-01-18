@@ -1,0 +1,6 @@
+.input-form{
+	& select , & input , & label{
+		display: block;
+	}
+
+}
