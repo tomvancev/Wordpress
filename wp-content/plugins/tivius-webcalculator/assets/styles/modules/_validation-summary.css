@@ -1,0 +1,16 @@
+.validation-summary{
+    border:1px solid #ddd;
+    margin-bottom:20px;
+	h4{
+		border-bottom :1px solid #ddd;
+	    background: #f5f5f5;
+    	padding: 10px;
+	}
+}
+label.hasError {
+    color: red;
+}
+
+.hasError input, .hasError select {
+    border-left: 1px solid red !important;
+}

@@ -1,0 +1,22 @@
+2019-01-23T22:14:41+00:00 CRITICAL Uncaught Error: Call to undefined function get_the_meta() in C:\xampp\htdocs\Wordpress\wp-content\plugins\tivius-webcalculator\tivius-webcalculator.php:42
+Stack trace:
+#0 C:\xampp\htdocs\Wordpress\wp-includes\rest-api\class-wp-rest-server.php(936): web_calc_get_products(Object(WP_REST_Request))
+#1 C:\xampp\htdocs\Wordpress\wp-includes\rest-api\class-wp-rest-server.php(321): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#2 C:\xampp\htdocs\Wordpress\wp-includes\rest-api.php(266): WP_REST_Server->serve_request('/webcalc/v2/ind...')
+#3 C:\xampp\htdocs\Wordpress\wp-includes\class-wp-hook.php(286): rest_api_loaded(Object(WP))
+#4 C:\xampp\htdocs\Wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#5 C:\xampp\htdocs\Wordpress\wp-includes\plugin.php(515): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\Wordpress\wp-includes\class-wp.php(375): do_action_ref_array('parse_request', Array)
+#7 C:\xampp\htdocs\Wordpress\wp-includes\class-wp.php(715): WP->parse_request('')
+#8 C:\xampp\htdocs\Wo
+
+2019-01-23T22:19:01+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_post_meta(), 0 passed in C:\xampp\htdocs\Wordpress\wp-content\plugins\tivius-webcalculator\tivius-webcalculator.php on line 42 and at least 1 expected in C:\xampp\htdocs\Wordpress\wp-includes\post.php:1836
+Stack trace:
+#0 C:\xampp\htdocs\Wordpress\wp-content\plugins\tivius-webcalculator\tivius-webcalculator.php(42): get_post_meta()
+#1 C:\xampp\htdocs\Wordpress\wp-includes\rest-api\class-wp-rest-server.php(936): web_calc_get_products(Object(WP_REST_Request))
+#2 C:\xampp\htdocs\Wordpress\wp-includes\rest-api\class-wp-rest-server.php(321): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#3 C:\xampp\htdocs\Wordpress\wp-includes\rest-api.php(266): WP_REST_Server->serve_request('/webcalc/v2/ind...')
+#4 C:\xampp\htdocs\Wordpress\wp-includes\class-wp-hook.php(286): rest_api_loaded(Object(WP))
+#5 C:\xampp\htdocs\Wordpress\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#6 C:\xampp\htdocs\Wordpress\wp-includes\plugin.php(515): WP_H
+

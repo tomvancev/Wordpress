@@ -1,6 +1,30 @@
 .input-form{
-	& select , & input , & label{
-		display: block;
+	& label {
+		display:block;
 	}
+	& select , & input {
+		display: block;
+	    padding: .6180469716em;
+	    background-color: #f2f2f2;
+	    color: #43454b;
+	    outline: 0;
+	    border: 0;
+	    box-sizing: border-box;
+	    font-weight: 400;
+	    box-shadow: inset 0 1px 1px rgba(0,0,0,.125);
+	    margin: 0 auto;
+	    width: 100%;
+	    @mixin atSmall {
+	    	margin:0;
+	    	width: 60% !important;
+	    }
+	}
+    text-align: left;
 
+    & input[type="submit"] {
+    	margin-top:20px;
+    }
+
+    margin-bottom: 1.618em;
 }
+

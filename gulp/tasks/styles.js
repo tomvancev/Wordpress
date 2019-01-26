@@ -9,8 +9,7 @@ hexrgba = require('postcss-hexrgba');
 
 var pathDestStyles = "./wp-content/plugins/tivius-webcalculator";
 var pathSrcStyles = "./wp-content/plugins/tivius-webcalculator/assets/styles/styles.css";
-
-gulp.task('styles', ()=>{
+gulpStyles = ()=>{
 	return gulp.src(pathSrcStyles)
 	.pipe(postcss([cssImport, mixins, cssvars, nested, hexrgba, autoprefixer]))
 	.on('error',function(errorInfo){
@@ -18,4 +17,5 @@ gulp.task('styles', ()=>{
 		this.emit('end');
 	})
 	.pipe(gulp.dest(pathDestStyles));
-});
+};
+gulp.task('styles', gulpStyles );
