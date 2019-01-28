@@ -10,12 +10,12 @@ var {validation} = helperScripts;
  class InputForm extends Component{
  	static defaultProps = {
 		fields: [
-		{key:0 ,text: "Your Name", name:"name", type:InputType.TEXT, errorText: ValidationErrors.NAME}
-		,{key:1 ,text: "Your Email", name:"email", type:InputType.EMAIL, errorText: ValidationErrors.EMAIL}
-		,{key:2 ,text: "Your Telephone", name:"tel", type:InputType.TELEPHONE, errorText: ValidationErrors.TELEPHONE}
-		,{key:3 ,text: "Povrsina m2", name:"povrsina", type:InputType.NUMBER, errorText: ValidationErrors.POVRSINA}
-		,{key:4 ,text: "Visina vo cm", name:"visina", type:InputType.NUMBER, errorText: ValidationErrors.VISINA}
-		,{key:5 ,text: "Debelina na izolacija", name:"izolacija", type:InputType.SELECT, errorText: ValidationErrors.DEBELINA, 
+		{key:0 ,text: "Име", name:"name", type:InputType.TEXT, errorText: ValidationErrors.NAME}
+		,{key:1 ,text: "Емаил", name:"email", type:InputType.EMAIL, errorText: ValidationErrors.EMAIL}
+		,{key:2 ,text: "Телефон", name:"tel", type:InputType.TELEPHONE, errorText: ValidationErrors.TELEPHONE}
+		,{key:3 ,text: "Површина во m2", name:"povrsina", type:InputType.NUMBER, errorText: ValidationErrors.POVRSINA}
+		,{key:4 ,text: "Висина во cm", name:"visina", type:InputType.NUMBER, errorText: ValidationErrors.VISINA}
+		,{key:5 ,text: "Дебелина на изолација", name:"izolacija", type:InputType.SELECT, errorText: ValidationErrors.DEBELINA, 
 				options: [
 							{id: 0,text:"0cm",val:"71.77"},
 							{id: 5,text:"5cm",val:"52.26"},
