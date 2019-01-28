@@ -40,7 +40,7 @@ var {validation} = helperScripts;
 		stateObj.validationErrors = [];
 		props.fields.forEach((field)=>{
 			stateObj[field.name] = "";
-		})
+		});
 		this.state = stateObj;
 
 
@@ -133,7 +133,7 @@ var {validation} = helperScripts;
 				{validaionSummary}
 				<form className="input-form">
 					{fields}
-					<input type="submit" onClick={this.handleSubmit} value="Calculate" />
+					<input type="submit" onClick={this.handleSubmit} value="Пресметај" />
 				</form>
 			</div>
 		)

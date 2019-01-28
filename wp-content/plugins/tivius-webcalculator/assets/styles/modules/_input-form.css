@@ -16,7 +16,6 @@
 	    width: 100%;
 	    @mixin atSmall {
 	    	margin:0;
-	    	width: 60% !important;
 	    }
 	}
     text-align: left;
