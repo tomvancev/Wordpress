@@ -8,7 +8,8 @@ function enqueue_calculator_scripts() {
     if( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'tivius-webcalculator') ) {
 
 		wp_register_script( 'calcscripts2', CD_PLUGIN_URL . '/assets/bundle.js', array('jquery'),  false, true );
-		add_javascript_api_url();
+		add_javascript_api_url('calcscripts2');
+    add_validation_messages('calcscripts2');
 		wp_enqueue_script( 'calcscripts2' );
 
 		wp_enqueue_style( 'calcstyles2', CD_PLUGIN_URL . 'styles.css');
@@ -16,13 +17,33 @@ function enqueue_calculator_scripts() {
 }
 
 
-function add_javascript_api_url(){
+function add_javascript_api_url($script){
 	$api_url = get_site_url( null, 'wp-json/webcalc/v2/index' );
-	wp_localize_script( 'calcscripts2', 'TIVIUS_API_URL', $api_url );
+	wp_localize_script($script, 'TIVIUS_API_URL', $api_url );
+}
+
+function add_validation_messages($script){
+  global $validationFields;
+  $tmp = array();
+  foreach ($validationFields as $field) {
+    $tmp[$field->js_name] = $field->opt_val;
+  }
+
+  wp_localize_script( $script, 'TIVIUS_VALIDATION_MSGS', $tmp );
 }
 
 
-// OLD AND NOT IN FUNCTIOON 
+function tivius_admin_scripts($hook){
+  $is_tivius_menu_page = (bool)strpos($hook,'webcalculator');
+  if($is_tivius_menu_page){
+    wp_enqueue_style( 'adminstyles', CD_PLUGIN_URL . 'admin-styles.css');
+  }
+}
+
+add_action( 'admin_enqueue_scripts', 'tivius_admin_scripts' );
+
+
+// OLD AND NOT IN FUNCTIOON
 /*
 
 function enqueue_calculator_scripts_old() {
@@ -33,7 +54,7 @@ function enqueue_calculator_scripts_old() {
 	wp_enqueue_style( 'calcstyles', plugin_dir_url( __FILE__ ) . 'style.css');
 	wp_enqueue_style( 'bootstrapcss', plugin_dir_url( __FILE__ ) . 'bootstrap.min.css');
  // end old and not in function
-	 
+
 
 	 if ( is_page('calculator2') ) {
 	wp_enqueue_script( 'calcscripts2', plugin_dir_url( __FILE__ ) . '/assets/bundle.js', array('jquery'),  false, true );

@@ -25,26 +25,32 @@
     "presets": [
       "@babel/preset-env",
       "@babel/preset-react"
-    ],"plugins": [
-    [
-      "@babel/plugin-proposal-class-properties",
-      {
-        "loose": true
-      }
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-class-properties",
+        {
+          "loose": true
+        }
+      ]
     ]
-  ]
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.2.3",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "browser-sync": "^2.26.3",
+    "eslint": "^5.13.0",
+    "eslint-plugin-react": "^7.12.4",
+    "esprima-fb": "^15001.1001.0-dev-harmony-fb",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-postcss": "^8.0.0",
     "gulp-watch": "^5.0.1",
+    "jscs": "^3.0.7",
     "normalize": "^0.3.1",
     "postcss-hexrgba": "^1.0.1",
     "postcss-import": "^12.0.1",

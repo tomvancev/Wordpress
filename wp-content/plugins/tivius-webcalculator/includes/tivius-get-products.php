@@ -1,4 +1,4 @@
-<?php 
+<?php
 function web_calc_get_products($request){
 	$name = $request['name'];
 	$email = $request['email'];
@@ -7,17 +7,15 @@ function web_calc_get_products($request){
 
     $args = array(
         'post_type'      => 'product',
-        'posts_per_page' => 10,
-
-        	'meta_key'   => 'hcf_kw',
-			'orderby'    => 'meta_value_num',
-			'order'      => 'ASC'
+        'posts_per_page' => -1,
+        'meta_key'   => 'hcf_kw',
+		  	'orderby'    => 'meta_value_num',
+		  	'order'      => 'ASC'
     );
 
     $loop = new WP_Query( $args );
     $products = array();
 
-	
 	while ( $loop->have_posts() ) : $loop->the_post();
 		$kWloop = get_post_meta( get_the_ID(), $key = 'hcf_kw', $single = false )[0];
 
@@ -29,7 +27,7 @@ function web_calc_get_products($request){
 				"post_id"    => get_the_ID(),
 				"kw" 		 => $kWloop,
 				"Q"		     => $kWrequest
-			); 
+			);
 		$products[] = $product;
     endwhile;
     	$closestKw = PHP_INT_MAX;
@@ -41,10 +39,9 @@ function web_calc_get_products($request){
  			}
  		}
  		if(is_null($theProduct)){
- 			// if no value found return the one with the highest kw value 
- 			$theProduct = end($products); 
+ 			// if no value found return the one with the highest kw value
+ 			$theProduct = end($products);
  		}
-
  		return $theProduct;
 }
 
@@ -68,7 +65,7 @@ function web_calc_get_products_old($request){
 
     $loop = new WP_Query( $args );
     $products = array();
-	
+
 	while ( $loop->have_posts() ) : $loop->the_post();
 		$product = array(
 				"permalink"	 => get_permalink(),
@@ -76,7 +73,7 @@ function web_calc_get_products_old($request){
 				"title"		 => get_the_title(),
 				"content"	 => get_the_content()
 
-			); 
+			);
 		$products[] = $product;
     endwhile;
 

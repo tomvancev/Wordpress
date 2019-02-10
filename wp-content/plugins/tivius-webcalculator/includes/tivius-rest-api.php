@@ -18,14 +18,14 @@ function handle_web_calc_request($request){
 }
 
 function add_web_calc_api(){
-	register_rest_route( 'webcalc/v1', '/index', 
+	register_rest_route( 'webcalc/v1', '/index',
 		array(	'methods' 	=> 'POST',
-			  	'callback'	=> 'web_calc_get_products_old'	
+			  	'callback'	=> 'web_calc_get_products_old'
 			  ), $override = false );
 
-	register_rest_route( 'webcalc/v2', '/index', 
+	register_rest_route( 'webcalc/v2', '/index',
 		array(	'methods' 	=> 'POST',
-			  	'callback'	=> 'handle_web_calc_request'	
+			  	'callback'	=> 'handle_web_calc_request'
 			  ), $override = false );
 }
 
